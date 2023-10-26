@@ -4,3 +4,4 @@ import * as authController from "../controllers/auth.controller.js";
 export const authRouter = express.Router();
 
 authRouter.post('/login', authController.login);
+authRouter.get('/refresh', authController.refresh);
