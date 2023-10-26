@@ -6,7 +6,7 @@ export const authMiddleware = (req, res, next) => {
 
     if (!token) return res.sendStatus(401);
 
-    jwt.verify(token, process.env.JWT_PRIVATE_KEY, (err, user) => {
+    jwt.verify(token, process.env.JWT_ACCESS_TOKEN_SECRET, (err, user) => {
         if (err) {
             console.log(err);
             return res.send(403);
